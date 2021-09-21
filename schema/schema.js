@@ -86,6 +86,20 @@ const mutation = new GraphQLObjectType({
           .then((res) => res.data);
       },
     },
+    editUser: {
+      type: UserType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) },
+        fullName: { type: GraphQLString },
+        age: { type: GraphQLInt },
+        companyId: { type: GraphQLString },
+      },
+      resolve(parentValue, args) {
+        return axios
+          .patch(`http://localhost:3000/users/${args.id}`, args)
+          .then((res) => res.data);
+      },
+    },
     deleteUser: {
       type: UserType,
       args: {
@@ -102,4 +116,5 @@ const mutation = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
+  mutation,
 });

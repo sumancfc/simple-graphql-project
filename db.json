@@ -1,14 +1,8 @@
 {
   "users": [
     {
-      "id": "28",
-      "fullName": "Shusma Shrestha",
-      "age": 25,
-      "companyId": "2"
-    },
-    {
       "id": "40",
-      "fullName": "Susman Shrestha",
+      "fullName": "Apple",
       "age": 1,
       "companyId": "2"
     },
